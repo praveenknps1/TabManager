@@ -1,0 +1,31 @@
+.font-medium{
+    color: aqua;
+}
+
+#remove{
+    color: red;
+}
+
+#addtab{
+    color: greenyellow;
+    margin: 10px;
+}
+#clearall{
+    color: tomato;
+}
+
+#main{
+    background-color: burlywood;
+    width: 1200px;
+    height: auto;
+}
+#input{
+    margin: 10px;
+
+}
+
+#head{
+
+    color: seagreen;
+
+}
