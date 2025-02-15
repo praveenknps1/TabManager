@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Tab Manager",
+    "version": "1.0",
+    "description": "Manage and categorize tabs based on keywords.",
+    "permissions": ["storage", "tabs"],
+    "background": {
+      "service_worker": "dist/dist/background.js"
+    },
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": {
+        "16": "public/icon.png",
+        "48": "public/icon.png",
+        "128": "public/icon.png"
+      }
+    },
+    "icons": {
+      "16": "public/icon.png",
+      "48": "public/icon.png",
+      "128": "public/icon.png"
+    }
+  }
+  
