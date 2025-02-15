@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./Tab.css"
 
-// Predefined categories with keywords
+
 const categories = {
   "Social Media": ["facebook", "twitter", "instagram", "linkedin"],
   Work: ["github", "slack", "notion", "jira"],
   News: ["bbc", "cnn", "nytimes", "theguardian"],
 };
 
-// Function to find the matching keyword for a URL
+
 const findKeyword = (url) => {
   for (const [category, keywords] of Object.entries(categories)) {
     for (const keyword of keywords) {
@@ -23,7 +23,6 @@ const findKeyword = (url) => {
 const TabManager = () => {
   const [tabs, setTabs] = useState([]);
 
-  // Load saved tabs from local storage only once when component mounts
   useEffect(() => {
     const savedTabs = localStorage.getItem("tabs");
     if (savedTabs) {
@@ -31,7 +30,6 @@ const TabManager = () => {
     }
   }, []);
 
-  // Save tabs to local storage whenever they change
   useEffect(() => {
     if (tabs.length > 0) {
       localStorage.setItem("tabs", JSON.stringify(tabs));
@@ -64,7 +62,6 @@ const TabManager = () => {
     localStorage.removeItem("tabs");
   };
 
-  // Grouping tabs by category
   const groupedTabs = tabs.reduce((acc, tab) => {
     acc[tab.category] = acc[tab.category] || [];
     acc[tab.category].push(tab);
@@ -75,7 +72,8 @@ const TabManager = () => {
     <div className="p-5 max-w-5xl mx-auto" id="main">
       <h2 className="text-2xl font-bold mb-4 text-center" id="head">Tab Manager</h2>
 
-      {/* Add Tab Section */}
+   
+   
       <div className="flex gap-2 mb-6">
         <input
           type="text"
@@ -93,9 +91,9 @@ const TabManager = () => {
         </button>
       </div>
 
-      {/* Display Tabs in Columns for Each Category */}
-
       
+
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {["Social Media", "Work", "News", "Others"].map((category) => (
           <div key={category} className="border p-4 rounded-lg shadow-md">
